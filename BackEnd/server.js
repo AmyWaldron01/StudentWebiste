@@ -81,9 +81,3 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
-app.get('/api/cars', (req, res) => {
-  bookModel.find((error,data) => {
-   console.log(data);
-   res.json(data);
-  })
- })

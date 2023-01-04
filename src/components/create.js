@@ -3,93 +3,93 @@ import axios from "axios";
 
 export class Create extends React.Component {
 
-    constructor(){
+    constructor() {
         super();
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.onChangeBookTitle = this.onChangeBookTitle.bind(this);
-        this.onChangeBookCover = this.onChangeBookCover.bind(this);
-        this.onChangeBookAuthor = this.onChangeBookAuthor.bind(this);
-        
+        this.onChangeCarBrand = this.onChangeCarBrand.bind(this);
+        this.onChangeCarModel = this.onChangeCarModel.bind(this);
+        this.onChangeCarYear = this.onChangeCarYear.bind(this);
+
         this.state = {
-            title:'',
-            cover:'',
-            author:''
+            brand: '',
+            model: '',
+            year: ''
         }
     }
 
-    handleSubmit(e){
+    handleSubmit(e) {
         e.preventDefault();
         console.log(`Button clicked 
-        ${this.state.title},
-        ${this.state.cover},
-        ${this.state.author}`);
+        ${this.state.brand},
+        ${this.state.model},
+        ${this.state.year}`);
 
-        const car ={
-            title:this.state.title,
-            cover:this.state.cover,
-            author:this.state.author
+        const car = {
+            brand: this.state.brand,
+            model: this.state.model,
+            year: this.state.year
         }
 
-        axios.post('http://localhost:4000/api/cars',car)
-        .then()
-        .catch();
+        axios.post('http://localhost:4000/api/cars', car)
+            .then()
+            .catch();
 
         this.setState({
-            title:'',
-            cover:'',
-            author:''
+            brand: '',
+            model: '',
+            year: ''
         })
     }
 
-    onChangeBookTitle(e){
+    onChangeCarBrand(e) {
         this.setState({
-            title:e.target.value
+            brand: e.target.value
         })
     }
-    onChangeBookCover(e){
+    onChangeCarModel(e) {
         this.setState({
-            cover:e.target.value
+            model: e.target.value
         })
     }
-    onChangeBookAuthor(e){
+    onChangeCarYear(e) {
         this.setState({
-            author:e.target.value
+            year: e.target.value
         })
     }
 
     render() {
         return (
             <div>
-                <h3>Hello from Create Component!</h3>
+                <h3>Add Your New Cars!</h3>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
-                        <label>Add Book Title: </label>
+                        <label>Add Car Brand: </label>
                         <input type="text"
                             className="form-control"
-                            value={this.state.title}
-                            onChange={this.onChangeBookTitle}
+                            value={this.state.brand}
+                            onChange={this.onChangeCarBrand}
                         />
                     </div>
 
                     <div className="form-group">
-                        <label>Add Book Cover: </label>
+                        <label>Add Car Model : </label>
                         <input type="text"
                             className="form-control"
-                            value={this.state.cover}
-                            onChange={this.onChangeBookCover}
+                            value={this.state.model}
+                            onChange={this.onChangeCarModel}
                         />
                     </div>
 
                     <div className="form-group">
-                        <label>Add Author: </label>
+                        <label>Add Car Year: </label>
                         <input type="text"
                             className="form-control"
-                            value={this.state.author}
-                            onChange={this.onChangeBookAuthor}
+                            value={this.state.year}
+                            onChange={this.onChangeCarYear}
                         />
                     </div>
 
-                    <input type="submit" value="Add Book" />
+                    <input type="submit" value="Add Car" />
                 </form>
             </div>
         );

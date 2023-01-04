@@ -27,6 +27,7 @@ export class ViewCars extends React.Component {
         return (
             <div>
                 <h3>Viewing All Cars</h3>
+                <Cars cars={this.state.cars} Reload={this.componentDidMount}></Cars>
             </div>
         );
     }
