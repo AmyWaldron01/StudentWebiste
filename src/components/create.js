@@ -24,13 +24,13 @@ export class Create extends React.Component {
         ${this.state.cover},
         ${this.state.author}`);
 
-        const book ={
+        const car ={
             title:this.state.title,
             cover:this.state.cover,
             author:this.state.author
         }
 
-        axios.post('http://localhost:4000/api/books',book)
+        axios.post('http://localhost:4000/api/cars',car)
         .then()
         .catch();
 

@@ -36,7 +36,7 @@ const bookSchema = new mongoose.Schema({
 
 const bookModel = mongoose.model('fdgdfgdfgdfg', bookSchema);
 
-app.post('/api/books', (req, res) => {
+app.post('/api/cars', (req, res) => {
   console.log(req.body);
 
   bookModel.create({
@@ -48,20 +48,20 @@ app.post('/api/books', (req, res) => {
   res.send('Data Recieved');
 })
 
-app.get('/api/books', (req, res) => {
+app.get('/api/cars', (req, res) => {
   bookModel.find((error, data) => {
     res.json(data);
   })
 })
 
-app.get('/api/book/:id', (req, res) => {
+app.get('/api/car/:id', (req, res) => {
   console.log(req.params.id);
   bookModel.findById(req.params.id, (error, data) => {
     res.json(data);
   })
 })
 
-app.put('/api/book/:id', (req, res) => {
+app.put('/api/car/:id', (req, res) => {
   console.log("Update: " + req.params.id);
 
   bookModel.findByIdAndUpdate(req.params.id, req.body, { new: true },
@@ -70,7 +70,7 @@ app.put('/api/book/:id', (req, res) => {
     })
 })
 
-app.delete('/api/book/:id', (req, res) => {
+app.delete('/api/car/:id', (req, res) => {
   console.log('Deleting: ' + req.params.id);
   bookModel.findByIdAndDelete({ _id: req.params.id }, (error, data) => {
     res.send(data);
@@ -80,3 +80,10 @@ app.delete('/api/book/:id', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+app.get('/api/cars', (req, res) => {
+  bookModel.find((error,data) => {
+   console.log(data);
+   res.json(data);
+  })
+ })
