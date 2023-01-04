@@ -1,32 +1,33 @@
 import React from "react";
 import Card from 'react-bootstrap/Card';
-import Button  from "react-bootstrap/Button";
+import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
 export class CarsItem extends React.Component {
-    constructor(){
+    constructor() {
         super();
         this.DeleteBook = this.DeleteBook.bind(this);
     }
-    DeleteBook(e){
+    DeleteBook(e) {
         e.preventDefault();
 
-        axios.delete('http://localhost:4000/api/car/'+this.props.car._id)
-        .then((res)=>{this.props.Reload();})
-        .catch();
+        axios.delete('http://localhost:4000/api/car/' + this.props.car._id)
+            .then((res) => { this.props.Reload(); })
+            .catch();
     }
     render() {
         return (
             <div>
 
                 <Card>
-                    <Card.Header>{this.props.car.title}</Card.Header>
+                    <Card.Header>{this.props.car.brand}</Card.Header>
                     <Card.Body>
                         <blockquote className="blockquote mb-0">
-                            <img src={this.props.car.cover}></img>
+                            <img src={this.props.car.model}></img>
                             <footer >
-                                {this.props.car.author}
+                                {this.props.car.year} 
+                                {this.props.car.rating}
                             </footer>
                         </blockquote>
                     </Card.Body>

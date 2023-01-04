@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-export class Create extends React.Component {
+export class AddCar extends React.Component {
 
     constructor() {
         super();
@@ -9,11 +9,13 @@ export class Create extends React.Component {
         this.onChangeCarBrand = this.onChangeCarBrand.bind(this);
         this.onChangeCarModel = this.onChangeCarModel.bind(this);
         this.onChangeCarYear = this.onChangeCarYear.bind(this);
+        this.onChangeCarRating = this.onChangeCarRating.bind(this);
 
         this.state = {
             brand: '',
             model: '',
-            year: ''
+            year: '',
+            rating: ''
         }
     }
 
@@ -22,12 +24,15 @@ export class Create extends React.Component {
         console.log(`Button clicked 
         ${this.state.brand},
         ${this.state.model},
-        ${this.state.year}`);
+        ${this.state.year},
+        ${this.state.rating} `
+        );
 
         const car = {
             brand: this.state.brand,
             model: this.state.model,
-            year: this.state.year
+            year: this.state.year,
+            rating: this.state.rating
         }
 
         axios.post('http://localhost:4000/api/cars', car)
@@ -37,7 +42,8 @@ export class Create extends React.Component {
         this.setState({
             brand: '',
             model: '',
-            year: ''
+            year: '',
+            rating: ''
         })
     }
 
@@ -54,6 +60,11 @@ export class Create extends React.Component {
     onChangeCarYear(e) {
         this.setState({
             year: e.target.value
+        })
+    }
+    onChangeCarRating(e) {
+        this.setState({
+            rating: e.target.value
         })
     }
 
@@ -86,6 +97,15 @@ export class Create extends React.Component {
                             className="form-control"
                             value={this.state.year}
                             onChange={this.onChangeCarYear}
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Add Car Rating: </label>
+                        <input type="text"
+                            className="form-control"
+                            value={this.state.rating}
+                            onChange={this.onChangeCarRating}
                         />
                     </div>
 
