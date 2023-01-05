@@ -16,10 +16,12 @@ import {
 } from 'react-router-dom';
 import { EditCars } from './components/editCars';
 
+//Main App
 class App extends React.Component {
   render() {
     return (
       <Router>
+        {/* Nav bar */}
         <div className="App">
           <Navbar bg="danger" variant="dark">
             <Container>
@@ -37,9 +39,7 @@ class App extends React.Component {
             <Route path='/addCar' element={<AddCar></AddCar>}></Route>
             <Route path='/editCars/:id' element={<EditCars></EditCars>}></Route>
           </Routes>
-          {/* <Header></Header>
-        <Content></Content>
-        <Footer></Footer> */}
+          {/* used  for comments */}
         </div>
       </Router>
     );

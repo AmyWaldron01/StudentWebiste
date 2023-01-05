@@ -1,6 +1,9 @@
 import React from "react";
 
 export class HomePage extends React.Component {
+  
+    //The home page 
+    //Tells u the local time and what the app does
     render() {
         return (
             <div>

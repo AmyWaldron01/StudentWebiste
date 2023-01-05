@@ -3,6 +3,7 @@ import axios from "axios";
 
 export class AddCar extends React.Component {
 
+    //handles the submit event
     constructor() {
         super();
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,6 +20,7 @@ export class AddCar extends React.Component {
         }
     }
 
+    //handles the submit event
     handleSubmit(e) {
         e.preventDefault();
         console.log(`Button clicked 
@@ -35,6 +37,7 @@ export class AddCar extends React.Component {
             rating: this.state.rating
         }
 
+        //sends the data to the server
         axios.post('http://localhost:4000/api/cars', car)
             .then()
             .catch();
@@ -47,6 +50,7 @@ export class AddCar extends React.Component {
         })
     }
 
+    //handles the change event
     onChangeCarBrand(e) {
         this.setState({
             brand: e.target.value
@@ -69,11 +73,14 @@ export class AddCar extends React.Component {
     }
 
     render() {
+        //Adding new cars here // what the user enters is stored in the state
         return (
             <div>
+
                 <h3>Add Your New Cars!</h3>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
+                        {/* Car Brand*/}
                         <label>Add Car Brand: </label>
                         <input type="text"
                             className="form-control"
@@ -83,6 +90,7 @@ export class AddCar extends React.Component {
                     </div>
 
                     <div className="form-group">
+                        {/*car Model */}
                         <label>Add Car Model : </label>
                         <input type="text"
                             className="form-control"
@@ -92,6 +100,7 @@ export class AddCar extends React.Component {
                     </div>
 
                     <div className="form-group">
+                        {/* Car Model*/}
                         <label>Add Car Year: </label>
                         <input type="text"
                             className="form-control"
@@ -101,6 +110,7 @@ export class AddCar extends React.Component {
                     </div>
 
                     <div className="form-group">
+                        {/* CAr Rating */}
                         <label>Add Car Rating: </label>
                         <input type="text"
                             className="form-control"

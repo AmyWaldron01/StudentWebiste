@@ -7,19 +7,22 @@ import axios from "axios";
 export class CarsItem extends React.Component {
     constructor() {
         super();
+        //binds the delete method to the component
         this.DeleteBook = this.DeleteBook.bind(this);
     }
     DeleteBook(e) {
         e.preventDefault();
 
+        //deletes the car from the database
         axios.delete('http://localhost:4000/api/car/' + this.props.car._id)
             .then((res) => { this.props.Reload(); })
             .catch();
     }
+
     render() {
+        //returns + prints out the car information 
         return (
             <div>
-
                 <Card>
                     <Card.Header>{this.props.car.brand}</Card.Header>
                     <Card.Body>
