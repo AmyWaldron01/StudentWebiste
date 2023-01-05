@@ -26,12 +26,15 @@ export class CarsItem extends React.Component {
                         <blockquote className="blockquote mb-0">
                             <img src={this.props.car.model}></img>
                             <footer >
-                                {this.props.car.year} 
+                                {this.props.car.year}
+
+                            </footer>
+                            <footer >
                                 {this.props.car.rating}
                             </footer>
                         </blockquote>
                     </Card.Body>
-                    <Link to={'/edit/' + this.props.car._id} className="btn btn-primary">Edit</Link>
+                    <Link to={'/editCars/' + this.props.car._id} className="btn btn-primary">Edit</Link>
                     <Button variant="danger" onClick={this.DeleteBook}>Delete</Button>
                 </Card>
             </div>
