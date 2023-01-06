@@ -1,3 +1,27 @@
+# Running the App
+
+- Open Cmd in Project Folder
+- Type 'npm start'
+
+- Open Cmd in Project Folder again in a new window
+- Type 'cd src'
+- Type 'cd backend'
+- Type 'nodemon server.js'
+
+Do Not close either Command Prompt Window.
+The app is ready to use, if not check the install list below.
+
+# installs
+npm install
+
+npm install mongosh - fixed my errors
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
