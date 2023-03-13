@@ -25,11 +25,11 @@ class App extends React.Component {
         <div className="App">
           <Navbar bg="danger" variant="dark">
             <Container>
-              <Navbar.Brand href="/">Cars</Navbar.Brand>
+              <Navbar.Brand href="/">GRADES</Navbar.Brand>
               <Nav className="me-auto">
                 <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/viewCars">View Cars</Nav.Link>
-                <Nav.Link href="/addCar">Add Cars</Nav.Link>
+                <Nav.Link href="/viewCars">View Grades</Nav.Link>
+                <Nav.Link href="/addCar">Add Grades</Nav.Link>
               </Nav>
             </Container>
           </Navbar>

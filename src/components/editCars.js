@@ -28,9 +28,9 @@ export function EditCars() {
         e.preventDefault();
 
         //pop up with new data entered
-        alert("---------------EDIT CONFIRMED--------------\n" + "Car Brand: " + brand + "\nCar Model: " +
-            model + "\nCar Year: " +
-            year + "\nCar Rating: " + rating);
+        alert("---------------EDIT CONFIRMED--------------\n" + "Lecture Name: " + brand + "\nExam Module: " +
+            model + "\nExam Type: " +
+            year + "\nExam Result: " + rating);
 
         const editCar = {
             brand: brand,
@@ -52,7 +52,7 @@ export function EditCars() {
             <h3>Edit component</h3>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label>Edit Car Brand: </label>
+                    <label>Edit Lecture Name: </label>
                     <input type="text"
                         className="form-control"
                         value={brand}
@@ -60,7 +60,7 @@ export function EditCars() {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Edit Car Model: </label>
+                    <label>Edit Module: </label>
                     <input type="text"
                         className="form-control"
                         value={model}
@@ -68,7 +68,7 @@ export function EditCars() {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Edit Car Year: </label>
+                    <label>Edit Exam Type </label>
                     <input type="text"
                         className="form-control"
                         value={year}
@@ -77,14 +77,14 @@ export function EditCars() {
                 </div>
 
                 <div className="form-group">
-                    <label>Edit Car Rating: </label>
+                    <label>Edit Grade </label>
                     <input type="text"
                         className="form-control"
                         value={rating}
                         onChange={(e) => { setRating(e.target.value) }}
                     />
                 </div>
-                <input type="submit" value="Edit Car"></input>
+                <input type="submit" value="Edit Grades"></input>
             </form>
         </div>
     );

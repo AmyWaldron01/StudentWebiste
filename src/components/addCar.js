@@ -77,11 +77,11 @@ export class AddCar extends React.Component {
         return (
             <div>
 
-                <h3>Add Your New Cars!</h3>
+                <h3>Add Your New Grades!</h3>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         {/* Car Brand*/}
-                        <label>Add Car Brand: </label>
+                        <label>Add Lecture Name: </label>
                         <input type="text"
                             className="form-control"
                             value={this.state.brand}
@@ -91,7 +91,7 @@ export class AddCar extends React.Component {
 
                     <div className="form-group">
                         {/*car Model */}
-                        <label>Add Car Model : </label>
+                        <label>Picture of Module : </label>
                         <input type="text"
                             className="form-control"
                             value={this.state.model}
@@ -101,7 +101,7 @@ export class AddCar extends React.Component {
 
                     <div className="form-group">
                         {/* Car Model*/}
-                        <label>Add Car Year: </label>
+                        <label>Add Exam : </label>
                         <input type="text"
                             className="form-control"
                             value={this.state.year}
@@ -111,7 +111,7 @@ export class AddCar extends React.Component {
 
                     <div className="form-group">
                         {/* CAr Rating */}
-                        <label>Add Car Rating: </label>
+                        <label>Add Grade: </label>
                         <input type="text"
                             className="form-control"
                             value={this.state.rating}
@@ -119,7 +119,7 @@ export class AddCar extends React.Component {
                         />
                     </div>
 
-                    <input type="submit" value="Add Car" />
+                    <input type="submit" value="Add Grade" />
                 </form>
             </div>
         );
